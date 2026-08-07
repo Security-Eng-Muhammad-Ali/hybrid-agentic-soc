@@ -229,7 +229,28 @@ Add to `/var/ossec/etc/ossec.conf`:
   </rule>
 </group>
 ```
+## 📸 Screenshots
 
+### n8n Workflow — Complete Pipeline
+![n8n Workflow](screenshots/n8n.png)
+
+### Wazuh Dashboard — Real Alerts
+![Wazuh Dashboard](screenshots/wazuhvalerts.png)
+
+### AI Investigation Report — High Risk Alert
+![AI Investigation](screenshots/ai-investigation.png)
+
+### Google Sheets — Audit Trail
+![Google Sheets](screenshots/google-sheets-log.png)
+
+### Gmail — Medium Risk Notification
+![Gmail Alert](screenshots/gmail-alert.png)
+
+### Grafana Dashboard
+![Grafana](screenshots/grafana-dashboard.png)
+
+### Correlation Engine — IP Tracking
+![Correlation](screenshots/correlation-sheet.png)
 ---
 
 ## 📁 Project Structure
