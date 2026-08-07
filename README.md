@@ -284,7 +284,7 @@ hybrid-agentic-soc/
 **Muhammad Ali**
 Junior SOC Engineer | Detection Engineering | Cloud Security
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/your-profile)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/muhammad-ali-497663243)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/Security-Eng-Muhammad-Ali)
 
 ---
