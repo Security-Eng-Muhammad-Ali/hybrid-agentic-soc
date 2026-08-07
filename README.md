@@ -232,7 +232,7 @@ Add to `/var/ossec/etc/ossec.conf`:
 ## 📸 Screenshots
 
 ### n8n Workflow — Complete Pipeline
-![n8n Workflow](screenshots/n8n.png)
+![n8n Workflow](n8n.png)
 
 ### Wazuh Dashboard — Real Alerts
 ![Wazuh Dashboard](screenshots/wazuhvalerts.png)
