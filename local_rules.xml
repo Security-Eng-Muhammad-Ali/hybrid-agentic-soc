@@ -1,0 +1,33 @@
+<!--
+-->
+<group name="local,syslog,sshd,">
+<!--
+ HIGH RISK Rule 1: Multiple SSH Brute Force Attempts
+       Triggers when same IP makes 8+ failed SSH logins within 60 seconds
+       Maps to MITRE ATT&CK: T1110 - Brute Force 
+-->
+<rule id="100001" level="12" frequency="8" timeframe="60">
+<if_matched_sid>5710</if_matched_sid>
+<same_source_ip/>
+<description>
+High Risk: Multiple SSH brute force attempts detected from same IP
+</description>
+<mitre>
+<id>T1110</id>
+</mitre>
+</rule>
+<!--
+ HIGH RISK Rule 2: New User Added to System
+       Triggers on any new user account creation
+       Maps to MITRE ATT&CK: T1136 - Create Account 
+-->
+<rule id="100002" level="13">
+<if_sid>5901</if_sid>
+<description>
+High Risk: New user added to system - potential unauthorized access
+</description>
+<mitre>
+<id>T1136</id>
+</mitre>
+</rule>
+</group>
