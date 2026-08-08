@@ -1,0 +1,29 @@
+#!/bin/sh
+# =============================================================
+#  Hybrid Agentic SOC - Wazuh → n8n Integration Script
+#  Author: Muhammad Ali (Security-Eng-Muhammad-Ali)
+#  GitHub: https://github.com/Security-Eng-Muhammad-Ali/hybrid-agentic-soc
+#
+#  Purpose: Forward Wazuh alerts to n8n webhook for
+#           rule-based routing and AI investigation
+#
+#  Installation:
+#  1. Copy to /var/ossec/integrations/custom-n8n
+#  2. chmod +x /var/ossec/integrations/custom-n8n
+#  3. chown root:wazuh /var/ossec/integrations/custom-n8n
+#  4. Add integration block to /var/ossec/etc/ossec.conf
+# =============================================================
+
+# n8n webhook URL (replace with your n8n private IP)
+WEBHOOK_URL="http://<N8N_PRIVATE_IP>:5678/webhook/wazuh-alerts"
+
+# Alert file passed by Wazuh
+ALERT_FILE=$1
+
+# Forward alert JSON to n8n
+curl -s -X POST \
+  -H "Content-Type: application/json" \
+  -d @${ALERT_FILE} \
+  ${WEBHOOK_URL}
+
+exit 0
