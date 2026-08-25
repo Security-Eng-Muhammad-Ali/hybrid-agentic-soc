@@ -263,6 +263,13 @@ Add to `/var/ossec/etc/ossec.conf`:
 
 ### Correlation Engine — IP Tracking
 ![Correlation](IP-correlation.png)
+
+### AI SOC Investigations — Native Plugin Sidebar
+![Plugin Sidebar](ai-soc-sidebar-nav.png)
+
+### AI SOC Investigations — Live Data Inside Plugin
+![Plugin Data Table](ai-soc-plugin-tab.png)
+
 ---
 
 ## 📁 Project Structure
