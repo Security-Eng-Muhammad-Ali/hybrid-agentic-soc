@@ -267,32 +267,27 @@ Add to `/var/ossec/etc/ossec.conf`:
 
 ## 📁 Project Structure
 
-
+```
 hybrid-agentic-soc/
-├── wazuhAiSoc-plugin/ # Native OpenSearch Dashboards plugin
-│ ├── opensearch_dashboards.json # Plugin manifest
-│ ├── package.json
-│ ├── server/ # Server-side plugin registration
-│ └── target/public/
-│ └── wazuhAiSoc.plugin.js # Compiled UI bundle
-├── n8n-workflows/
-│ ├── wazuh-alert-router.json # Main workflow (export from n8n)
-│ └── grafana-data-api.json # Dashboard data API workflow
-├── wazuh-config/
-│ ├── custom-n8n # Integration script
-│ ├── ossec.conf (snippet) # Integration config
-│ └── local_rules.xml # Custom detection rules
-├── attack-simulation/
-│ └── attack_simulation.py # Multi-vector attack simulator
-├── screenshots/
-│ ├── n8n-workflow.png
-│ ├── google-sheets-log.png
-│ ├── gmail-alert.png
-│ ├── ai-investigation.png
-│ ├── ai-soc-plugin-tab.png # Native plugin sidebar view
-│ └── grafana-dashboard.png
-├── Hybrid_Agentic_SOC_POC_v3.pdf # Full technical documentation
-└── README.md
+├── wazuhAiSoc-plugin/           # Native OpenSearch Dashboards plugin
+│   ├── opensearch_dashboards.json
+│   ├── package.json
+│   ├── server/
+│   └── target/public/wazuhAiSoc.plugin.js
+├── custom-n8n                   # Wazuh → n8n integration script
+├── local_rules.xml              # Custom Wazuh detection rules
+├── attack_simulation.py         # Multi-vector attack simulator
+├── Hybrid_Agentic_SOC_POC_v3.pdf
+├── README.md
+├── AI-summary.png
+├── Google-sheet.png
+├── Grafana-dashboard.png
+├── IP-correlation.png
+├── mail-alert.png
+├── n8n.png
+└── wazuh-alert.png
+```
+
 ---
 
 ## 🎯 MITRE ATT&CK Coverage
