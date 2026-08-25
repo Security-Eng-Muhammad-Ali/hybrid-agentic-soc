@@ -1,0 +1,9 @@
+{
+  "id": "wazuhAiSoc",
+  "version": "2.19.5",
+  "opensearchDashboardsVersion": "2.19.5",
+  "server": true,
+  "ui": true,
+  "requiredPlugins": [],
+  "optionalPlugins": []
+}

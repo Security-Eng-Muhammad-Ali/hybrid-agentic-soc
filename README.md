@@ -90,6 +90,18 @@ Tracks patterns across 4 dimensions:
 - All processing stays within AWS VPC
 - Enterprise-grade privacy compliance (GDPR, HIPAA friendly)
 
+
+### 🎛️ Native Wazuh Dashboard Plugin
+- Custom OpenSearch Dashboards plugin (`wazuhAiSoc`) — appears as a dedicated sidebar tab, not a generic saved dashboard
+- Live status header showing AI Model, Threat Intel sources, and Auto-Action capability
+- Displays real-time AI SOC Investigations table (VirusTotal + AbuseIPDB scores, AI summary, status)
+
+### 🤖 Automated IP Blocking
+- AWS Lambda function (`soc-ip-block`) triggered by analyst confirmation
+- Automatically updates EC2 Security Group rules to block confirmed malicious IPs
+- Action logged to Google Sheets audit trail with timestamp and reason
+
+
 ---
 
 ## 📊 Real Results
@@ -255,26 +267,32 @@ Add to `/var/ossec/etc/ossec.conf`:
 
 ## 📁 Project Structure
 
-```
-hybrid-agentic-soc/
-├── n8n-workflows/
-│   ├── wazuh-alert-router.json      # Main workflow (export from n8n)
-│   └── grafana-data-api.json        # Dashboard data API workflow
-├── wazuh-config/
-│   ├── custom-n8n                   # Integration script
-│   ├── ossec.conf (snippet)         # Integration config
-│   └── local_rules.xml             # Custom detection rules
-├── attack-simulation/
-│   └── attack_simulation.py        # Multi-vector attack simulator
-├── screenshots/
-│   ├── n8n-workflow.png
-│   ├── google-sheets-log.png
-│   ├── gmail-alert.png
-│   ├── ai-investigation.png
-│   └── grafana-dashboard.png
-└── README.md
-```
 
+hybrid-agentic-soc/
+├── wazuhAiSoc-plugin/ # Native OpenSearch Dashboards plugin
+│ ├── opensearch_dashboards.json # Plugin manifest
+│ ├── package.json
+│ ├── server/ # Server-side plugin registration
+│ └── target/public/
+│ └── wazuhAiSoc.plugin.js # Compiled UI bundle
+├── n8n-workflows/
+│ ├── wazuh-alert-router.json # Main workflow (export from n8n)
+│ └── grafana-data-api.json # Dashboard data API workflow
+├── wazuh-config/
+│ ├── custom-n8n # Integration script
+│ ├── ossec.conf (snippet) # Integration config
+│ └── local_rules.xml # Custom detection rules
+├── attack-simulation/
+│ └── attack_simulation.py # Multi-vector attack simulator
+├── screenshots/
+│ ├── n8n-workflow.png
+│ ├── google-sheets-log.png
+│ ├── gmail-alert.png
+│ ├── ai-investigation.png
+│ ├── ai-soc-plugin-tab.png # Native plugin sidebar view
+│ └── grafana-dashboard.png
+├── Hybrid_Agentic_SOC_POC_v3.pdf # Full technical documentation
+└── README.md
 ---
 
 ## 🎯 MITRE ATT&CK Coverage
@@ -292,12 +310,11 @@ hybrid-agentic-soc/
 ## 🔮 Future Improvements
 
 - [ ] Analyst approve/reject loop (human-in-the-loop)
-- [ ] Custom SOC dashboard with AI summaries
 - [ ] Multi-agent correlation (same attacker across multiple targets)
-- [ ] Automated IP blocking via AWS Security Groups API
+- [ ] Ticketing integration (Jira/ServiceNow auto-create for HIGH alerts)
 - [ ] Slack integration for team notifications
 - [ ] Threat hunting queries based on correlation patterns
-
+- [ ] Multi-model support (GPT-4/Claude for premium investigation)
 ---
 
 ## 👨‍💻 Author

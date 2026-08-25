@@ -1,0 +1,8 @@
+{
+  "name": "wazuhAiSoc",
+  "version": "1.0.0",
+  "description": "Wazuh AI SOC Investigations Plugin",
+  "main": "target/public/wazuhAiSoc.plugin.js",
+  "scripts": {},
+  "dependencies": {}
+}
